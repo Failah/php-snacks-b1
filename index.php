@@ -160,6 +160,7 @@ Qui l’array di esempio: https://www.codepile.net/pile/R2K5d68z -->
              <?php
                 for ($i = 0; $i < count($posts[$posts_keys[$k]]); $i++) {
                 ?>
+
          <div>
              <?= $posts[$posts_keys[$k]][$i]['title'] ?>
          </div>
@@ -169,17 +170,13 @@ Qui l’array di esempio: https://www.codepile.net/pile/R2K5d68z -->
          <div>
              <?= $posts[$posts_keys[$k]][$i]['text'] ?>
          </div>
+
      <?php
-
                 }
-
         ?>
 
      </p>
      </div>
-
  <?php
-
     }
-
     ?>
