@@ -180,3 +180,18 @@ Qui l’array di esempio: https://www.codepile.net/pile/R2K5d68z -->
  <?php
     }
     ?>
+
+
+ <!-- SNACK 4
+
+Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il paragrafo e suddividerlo in 
+tanti paragrafi. Ogni punto un nuovo paragrafo. -->
+
+ <?php
+    echo '<h2 style="color: red">SNACK 4</h2>';
+    $par = 'Ciao sono Valerio. Sono un programmatore (magari). Mi diverto molto con JavaScript. A presto!';
+
+    $parExploded = explode('.', $par);
+
+    var_dump($parExploded);
+    ?>
