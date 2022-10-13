@@ -152,7 +152,7 @@ Qui l’array di esempio: https://www.codepile.net/pile/R2K5d68z -->
 
     ?>
 
-     <div>
+     <div style="border: 3px solid black; padding-left: 5px; margin-bottom: 5px; width: 200px">
          <h2>
              <?= $posts_keys[$k] ?>
          </h2>
@@ -160,15 +160,16 @@ Qui l’array di esempio: https://www.codepile.net/pile/R2K5d68z -->
              <?php
                 for ($i = 0; $i < count($posts[$posts_keys[$k]]); $i++) {
                 ?>
-
-         <div>
-             <?= $posts[$posts_keys[$k]][$i]['title'] ?>
-         </div>
-         <div>
-             <?= $posts[$posts_keys[$k]][$i]['author'] ?>
-         </div>
-         <div>
-             <?= $posts[$posts_keys[$k]][$i]['text'] ?>
+         <div style="border: 1px solid black; margin-right: 5px; margin-bottom: 5px;">
+             <div>
+                 <?= $posts[$posts_keys[$k]][$i]['title'] ?>
+             </div>
+             <div>
+                 <?= $posts[$posts_keys[$k]][$i]['author'] ?>
+             </div>
+             <div>
+                 <?= $posts[$posts_keys[$k]][$i]['text'] ?>
+             </div>
          </div>
 
      <?php
@@ -194,4 +195,51 @@ tanti paragrafi. Ogni punto un nuovo paragrafo. -->
     $parExploded = explode('.', $par);
 
     var_dump($parExploded);
+    ?>
+
+
+ <!-- SNACK 5
+
+Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno avrà Nome, Cognome 
+e un array contenente i suoi voti scolastici. Stampare Nome, Cognome e la media dei voti di ogni alunno. -->
+
+ <?php
+    echo '<h2 style="color: red">SNACK 5</h2>';
+
+    $average = [];
+
+    $class = [
+        [
+            'name' => 'Valerio',
+            'surname' => 'Failah',
+            'votes' => [8, 5, 7, 7, 3, 10, 6, 6, 7, 8],
+        ],
+        [
+            'name' => 'Nathan',
+            'surname' => 'Drake',
+            'votes' => [3, 6, 10,],
+        ],
+        [
+            'name' => 'Sherlock',
+            'surname' => 'Holmes',
+            'votes' => [7, 9, 9, 10, 10],
+        ],
+    ];
+
+    for ($j = 0; $j < count($class); $j++) {
+        $averageCalc = (array_sum($class[$j]['votes']) / count($class[$j]['votes']));
+        $average[] = $averageCalc;
+    }
+
+    for ($ind = 0; $ind < count($class); $ind++) {
+
+    ?>
+     <div style="border: 3px solid black; padding-left: 5px; margin-bottom: 5px; width: 200px">
+         <p>Name: <?= $class[$ind]['name'] ?></p>
+         <p>Surname: <?= $class[$ind]['surname'] ?></p>
+         <p>Average: <?= $average[$ind] ?></p>
+     </div>
+ <?php
+    }
+
     ?>
