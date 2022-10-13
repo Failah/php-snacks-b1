@@ -96,3 +96,90 @@ Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” 
  <div style="font-size: 1.5rem">
      <?php echo $verification ?>
  </div>
+
+
+ <!-- SNACK 3
+
+ Creare un array di array. Ogni array figlio avrà come chiave una data in questo formato: DD-MM-YYYY es 01-01-2007 e 
+come valore un array di post associati a quella data. Stampare ogni data con i relativi post.
+Qui l’array di esempio: https://www.codepile.net/pile/R2K5d68z -->
+
+ <?php
+    echo '<h2 style="color: red">SNACK 3</h2>';
+
+    $posts = [
+        '10/01/2019' => [
+            [
+                'title' => 'Post 1',
+                'author' => 'Michele Papagni',
+                'text' => 'Testo post 1'
+            ],
+            [
+                'title' => 'Post 2',
+                'author' => 'Michele Papagni',
+                'text' => 'Testo post 2'
+            ],
+        ],
+        '10/02/2019' => [
+            [
+                'title' => 'Post 3',
+                'author' => 'Michele Papagni',
+                'text' => 'Testo post 3'
+            ]
+        ],
+        '15/05/2019' => [
+            [
+                'title' => 'Post 4',
+                'author' => 'Michele Papagni',
+                'text' => 'Testo post 4'
+            ],
+            [
+                'title' => 'Post 5',
+                'author' => 'Michele Papagni',
+                'text' => 'Testo post 5'
+            ],
+            [
+                'title' => 'Post 6',
+                'author' => 'Michele Papagni',
+                'text' => 'Testo post 6'
+            ]
+        ],
+    ];
+
+    $posts_keys = array_keys($posts);
+
+    for ($k = 0; $k < count($matches); $k++) {
+
+    ?>
+
+     <div>
+         <h2>
+             <?= $posts_keys[$k] ?>
+         </h2>
+         <p>
+             <?php
+                for ($i = 0; $i < count($posts[$posts_keys[$k]]); $i++) {
+                ?>
+         <div>
+             <?= $posts[$posts_keys[$k]][$i]['title'] ?>
+         </div>
+         <div>
+             <?= $posts[$posts_keys[$k]][$i]['author'] ?>
+         </div>
+         <div>
+             <?= $posts[$posts_keys[$k]][$i]['text'] ?>
+         </div>
+     <?php
+
+                }
+
+        ?>
+
+     </p>
+     </div>
+
+ <?php
+
+    }
+
+    ?>
