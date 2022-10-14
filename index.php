@@ -80,9 +80,15 @@ Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” 
  <?php
     echo '<h2 style="color: red">SNACK 2</h2>';
 
-    $name = $_GET['name'];
-    $mail = $_GET['mail'];
-    $age = $_GET['age'];
+    $name = '';
+    $mail = '';
+    $age = '';
+
+    if (isset($_GET['name']) && isset($_GET['mail']) && isset($_GET['age'])) {
+        $name = $_GET['name'];
+        $mail = $_GET['mail'];
+        $age = $_GET['age'];
+    }
 
     $verification = '';
 
